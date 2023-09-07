@@ -1,3 +1,12 @@
+variable "vpc" {
+  default = ""
+}
+variable "default_vpc_id" {
+  default = ""
+}
+variable "default_vpc_cidr" {
+  default = ""
+}
 module "vpc" {
   source   = "git::https://github.com/lakshmiDev99/tf-module-vpc.git"
   for_each = var.vpc
