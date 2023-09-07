@@ -1,4 +1,4 @@
-module "components" {
+module "vpc" {
   source   = "git::https://github.com/lakshmiDev99/tf-module-vpc.git"
   for_each = var.vpc
   cidr = each.value["cidr"]
@@ -10,6 +10,17 @@ module "components" {
   env = var.env
 }
 
-output "vpc" {
-  value = "module.vpc"
-}
+#module "alb" {
+#  source   = "git::https://github.com/lakshmiDev99/tf-module-alb.git"
+#  for_each = var.alb
+#  internal=each.value["internal"]
+#  sg_ingress_cidr=each.value["sg_ingress_cidr"]
+#  vpc_id=each.value["internal"] ? local.vpc_id: var.default_vpc_id
+#  subnets=each.value["internal"] ? local.app_subnets: var.default_vpc_id
+#  lb_type=each.value["type"]
+#  tags = var.tags
+#  env = var.env
+#  sg_port= each.value["sg_port"]
+#}
+
+
