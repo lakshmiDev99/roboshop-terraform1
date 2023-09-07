@@ -16,7 +16,7 @@ module "vpc" {
 #  internal=each.value["internal"]
 #  sg_ingress_cidr=each.value["sg_ingress_cidr"]
 #  vpc_id=each.value["internal"] ? local.vpc_id: var.default_vpc_id
-#  subnets=each.value["internal"] ? local.app_subnets: var.default_vpc_id
+#  subnets=each.value["internal"] ? :local.app_subnets
 #  lb_type=each.value["type"]
 #  tags = var.tags
 #  env = var.env
