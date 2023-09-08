@@ -18,7 +18,7 @@ module "alb" {
   sg_ingress_cidr=each.value["sg_ingress_cidr"]
   vpc_id=each.value["internal"] ? local.vpc_id: var.default_vpc_id
   subnets=each.value["internal"] ? local.app_subnets :data.aws_subnets.subnets.ids
-#  lb_type=each.value["type"]
+  lb_type=each.value["type"]
   tags = var.tags
   env = var.env
   sg_port= each.value["sg_port"]
